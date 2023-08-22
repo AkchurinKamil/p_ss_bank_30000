@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "history")
-public class history {
+public class History {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class history {
     private Long id;
 
     @Nullable
-    @Column(name="transfer_audit_id")
+    @Column(name = "transfer_audit_id")
     private Long transferAuditId;
 
     @Nullable
@@ -37,12 +37,13 @@ public class history {
     private Long antiFraudAuditId;
 
     @Nullable
-    @Column(name="public_bank_info_audit_id")
+    @Column(name = "public_bank_info_audit_id")
     private Long publicBankInfoAuditId;
 
     @Nullable
-    @Column(name="authorization_audit_id")
+    @Column(name = "authorization_audit_id")
     private Long authorizationAuditId;
+
 }
 
 
