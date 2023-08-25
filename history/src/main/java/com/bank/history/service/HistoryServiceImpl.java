@@ -7,6 +7,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+
+/**
+ * History service using repositories methods implementation
+ */
 @Service
 public class HistoryServiceImpl implements HistoryService {
 
@@ -29,10 +33,9 @@ public class HistoryServiceImpl implements HistoryService {
 
     @Transactional
     @Override
-    public void deleteHistory(History history) {
-        historyRepository.delete(history);
+    public void deleteHistory(Long id){
+        historyRepository.deleteById(id);
     }
-
     @Transactional
     @Override
     public void updateHistory(History history) {

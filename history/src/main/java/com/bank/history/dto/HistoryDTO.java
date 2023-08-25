@@ -5,6 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.lang.Nullable;
 
+/**
+ * Data transfer object for History
+ */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,6 +17,7 @@ public class HistoryDTO {
     private Long id;
 
     @Nullable
+
     private Long transferAuditId;
 
     @Nullable
@@ -30,5 +35,4 @@ public class HistoryDTO {
     @Nullable
     private Long authorizationAuditId;
 
-    private String info;
 }

@@ -7,6 +7,10 @@ import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 
+/**
+ *  History class representing database entity
+ */
+
 
 @Data
 @AllArgsConstructor
