@@ -51,9 +51,9 @@ public class HistoryRestController {
 
     @GetMapping("/{id}")
     public ResponseEntity<HistoryDTO> getHistoryById(@PathVariable("id") Long id) {
-        final Optional<History> optionalHistory =
+        final History history =
                 historyService.findHistoryById(id);
-        return ResponseEntity.ok().body(historyMapper.historyToDTO(optionalHistory.get()));
+        return ResponseEntity.ok().body(historyMapper.historyToDTO(history));
     }
 
     @PostMapping

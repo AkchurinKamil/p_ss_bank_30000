@@ -2,11 +2,11 @@ package com.bank.history.service;
 
 import com.bank.history.entity.History;
 import com.bank.history.repository.HistoryRepository;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * History service using repositories methods implementation
@@ -33,8 +33,10 @@ public class HistoryServiceImpl implements HistoryService {
 
     @Transactional
     @Override
-    public void deleteHistory(Long id){
-        historyRepository.deleteById(id);
+    public void deleteHistory(Long id) {
+        if (historyRepository.findById(id).isPresent()) {
+            historyRepository.deleteById(id);
+        } else throw new UsernameNotFoundException("User not found with id " + id);
     }
     @Transactional
     @Override
@@ -44,7 +46,7 @@ public class HistoryServiceImpl implements HistoryService {
     }
 
     @Override
-    public Optional<History> findHistoryById(Long id) {
-        return historyRepository.findById(id);
+    public History findHistoryById(Long id) {
+        return historyRepository.findById(id).orElseThrow(()-> new UsernameNotFoundException("User not found with id " + id));
     }
 }

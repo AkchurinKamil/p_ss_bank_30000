@@ -3,7 +3,6 @@ package com.bank.history.service;
 import com.bank.history.entity.History;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * History service using repositories methods
@@ -19,7 +18,7 @@ public interface HistoryService {
 
     void updateHistory(History history);
 
-    Optional<History> findHistoryById(Long id);
+    History findHistoryById(Long id);
 
 
 }
