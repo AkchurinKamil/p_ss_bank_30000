@@ -24,3 +24,15 @@ spring:
     drop-first: false
   application:
     name: history-app
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: history-service
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
