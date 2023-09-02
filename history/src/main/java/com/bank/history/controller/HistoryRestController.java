@@ -43,8 +43,6 @@ public class HistoryRestController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteHistory(@PathVariable("id") Long id) {
-
-
         historyService.deleteHistory(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
