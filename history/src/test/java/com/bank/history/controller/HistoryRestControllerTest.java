@@ -31,7 +31,7 @@ class HistoryRestControllerTest {
 
 
     @Test
-    void getAllHistory() {
+    void getAllHistory_ReturnedAllHistory() {
         final History history = new History(1L,
                 2L,2L,null,
                 2L,2L,2L);
@@ -45,14 +45,14 @@ class HistoryRestControllerTest {
     }
 
     @Test
-    void deleteHistory() {
+    void deleteHistoryById_1_DeletedHistoryById_1() {
         historyRestController.deleteHistory(1L);
         verify(historyService, times(1)).deleteHistory(1L);
 
     }
 
     @Test
-    void getHistoryById() {
+    void getHistoryById_returnHistoryById() {
         final History history = new History(1L,
                 2L,2L,null,
                 2L,2L,2L);
@@ -68,7 +68,7 @@ class HistoryRestControllerTest {
     }
 
     @Test
-    void createHistoryAccount() {
+    void createHistoryAccount_CreatedHistoryAccount() {
         final History history = new History(1L,
                 2L,2L,null,
                 2L,2L,2L);
@@ -84,7 +84,7 @@ class HistoryRestControllerTest {
     }
 
     @Test
-    void updateHistory() {
+    void updateHistory_UpdatedHistory() {
         final History history = new History(1L,
                 2L,2L,null,
                 2L,2L,2L);

@@ -17,7 +17,7 @@ class HistoryMapperTest {
     private final HistoryMapper historyMapper = Mappers.getMapper(HistoryMapper.class);
 
     @Test
-    void historyToDTO() {
+    void getHistory_ReturnedHistoryToDTO() {
         final History history = new History(1L,
                 2L,2L,null,
                 2L,2L,2L);
@@ -29,7 +29,7 @@ class HistoryMapperTest {
     }
 
     @Test
-    void historyToEntity() {
+    void getHistoryDTO_ReturnedHistoryDTOToEntity() {
         final History history = new History(1L,
                 2L,2L,null,
                 2L,2L,2L);
@@ -41,7 +41,7 @@ class HistoryMapperTest {
     }
 
     @Test
-    void historyToDTOList() {
+    void getHistory_ReturnedHistoryToDTOList() {
         final History history = new History(1L,
                 2L,2L,null,
                 2L,2L,2L);
