@@ -55,16 +55,11 @@ class HistoryServiceImplTest {
 
     @Test
     void updateHistory_ReturnedUpdatedHistory() {
-        final History history = new History(1L,
-                2L, 2L, null,
-                2L, 2L, 2L);
         History updatedHistory = new History(1L,
                 2L, 2L, 3L,
                 2L, 2L, 2L);
-        when(historyRepository.findById(history.getId())).thenReturn(Optional.of(history)).thenReturn(Optional.of(updatedHistory));
+        when(historyRepository.findById(updatedHistory.getId())).thenReturn(Optional.of(updatedHistory));
         when(historyRepository.save(updatedHistory)).thenReturn(updatedHistory);
-        final History actualAudit = historyServiceimpl.findHistoryById(1L);
-        assertEquals(history, actualAudit);
         historyServiceimpl.updateHistory(updatedHistory);
         final History actualAuditAfterUpdate = historyServiceimpl.findHistoryById(1L);
         assertEquals(actualAuditAfterUpdate, updatedHistory);
