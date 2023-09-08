@@ -17,7 +17,6 @@ public class HistoryDTO {
     private Long id;
 
     @Nullable
-
     private Long transferAuditId;
 
     @Nullable
